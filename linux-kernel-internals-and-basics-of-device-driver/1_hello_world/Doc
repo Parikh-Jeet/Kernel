@@ -1,0 +1,97 @@
+This is the first Doc so might be it take some long, let's start 
+
+Command to learn
+================
+As a device driver devloper, I observed that some command that every one
+need to learn if they want to play with the kernel 
+
+1) insmod 
+-----------
+do : to inshirt the '<module_name>.ko' module in kernel dynamically. 
+usage :	
+	 insmod <module_name>.ko
+
+2) rmmod
+-----------
+do : to remove the '<module_name>' module from the kernel dynamically. 
+usage :
+	rmmod <module_name>
+
+3) lsmod
+-----------
+do : to know what are the modules are present in kernel right now.
+usage :
+	lsmod
+
+4) modinfo
+-----------
+do : to get the infomation about the module
+usage :
+	modinfo <module_name>.ko
+
+5) dmesg
+-----------
+do : just for debugging 
+usage :
+	dmesg 
+
+
+What should you have to know before movig to the code?
+================
+at least you have some basic understandig of all of the above commands
+
+What you have to do now?
+================
+You have to know basics of this commands so go for the 'man pages' or google to know more about it.
+
+Lets move forward now 
+
+____________
+|           |
+|  _     _  |     
+|  ()    () |
+|           |  
+|     ___   |
+|           |
+-------------------Stay with me I'm going to take you some unknown place !! 
+
+
+See a code once and again come back here...
+
+1) genrate .ko file of your program
+	
+use :	make
+
+- you gets some other files also but not afrid I'm here for you only.
+- You got your first .ko file, Enjoy !!
+
+2) you can insert the .ko module now
+
+use : insmod hello_world_module.ko
+
+- yes!! You inserted your module in kernel 
+- you don't bealive me then 
+
+use : lsmod |grep hello
+
+- you can able to see your module name from this command
+- so that means it's inshirted
+- ohh...you're not bealiving on me wait..
+- try this..  
+
+use : dmesg |tail -10
+
+- see that your printk() message is appear here which is present in hello_world_init() :)
+- now you can realise that waht I mean by inshirting a module
+
+3) finally remove the module
+
+use : rmmod hello_world_module.ko 
+
+- It is removing the module
+- ohh...again you don't trust me!! :(
+- then use this
+
+use : dmesg |tail -10
+
+- you can able to see printk() messages appear here which is present in hello_world_exit()
