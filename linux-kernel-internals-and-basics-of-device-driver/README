@@ -1,4 +1,4 @@
-Here You can find step by step guid to learn about device driver programming in linux kernel.
+Here You can find step by step guide to learn about device driver programming in linux kernel.
 This is, For the beginners who find "Linux Device Driver" deficult at first look. 
 
 In each directory first read 'Doc' file and then try to understand the code
